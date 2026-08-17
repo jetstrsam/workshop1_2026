@@ -136,7 +136,7 @@ class Strings:
             int(texto)
             return True
         except ValueError:
-            return False:
+            return False
     
     def cifrar_cesar(self, texto, desplazamiento):
         """
