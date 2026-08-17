@@ -149,7 +149,20 @@ class Strings:
         Returns:
             str: Cadena cifrada
         """
-        pass
+        resultado = ""
+
+        for caracter in texto:
+            if caracter.isupper():
+                nuevo_caracter = chr((ord(caracter)) - ord("A") + desplazamiento) % 26 + ord("A")
+                resultado += nuevo_caracter
+            elif caracter is lower:
+                nuevo_caracter = chr((ord(caracter)) - ord("a") + desplazamiento) % 26 + ord("a")
+                resultado += nuevo_caracter
+            else:
+                resultado += caracter
+
+        return resultado
+        #solucion realizada con apoyo de inteligencia artificial Gemini.
     
     def descifrar_cesar(self, texto, desplazamiento):
         """
@@ -162,7 +175,7 @@ class Strings:
         Returns:
             str: Cadena descifrada
         """
-        pass
+        return self.cifrar_cesar(texto, -desplazamiento)
     
     def encontrar_subcadena(self, texto, subcadena):
         """
