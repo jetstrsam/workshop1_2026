@@ -216,7 +216,8 @@ class Formulas:
         Ejemplo:
             discriminante(1, -3, 2) -> 1
         """
-        pass
+        discriminante= (b**2)-(4*a*c)
+        return discriminante
 
     def raices_cuadraticas(self, a, b, c):
         """
