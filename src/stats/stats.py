@@ -109,7 +109,7 @@ class Stats:
             return 0.0
 
         media = sum(numeros) / len(numeros)
-        return sum((x - media) ** 2 for x in numeros) / len(n)
+        return sum((x - media) ** 2 for x in numeros) / len(numeros)
     
     def rango(self, numeros):
         """
