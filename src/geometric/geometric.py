@@ -103,7 +103,9 @@ class Geometria:
         Returns:
             bool: True si los lados pueden formar un triángulo, False en caso contrario
         """
-        pass
+        validez= (lado1 + lado2 > lado3) and (lado1 + lado3 > lado2) and (lado2 + lado3 > lado1)
+        return validez
+
     
     def area_trapecio(self, base_mayor, base_menor, altura):
         """
@@ -117,7 +119,8 @@ class Geometria:
         Returns:
             float: Área del trapecio
         """
-        pass
+        area_trapecio= ((base_mayor + base_menor) * altura) / 2
+        return area_trapecio
     
     def area_rombo(self, diagonal_mayor, diagonal_menor):
         """
