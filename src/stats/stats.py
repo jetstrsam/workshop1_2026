@@ -1,3 +1,5 @@
+import math 
+
 class Stats:
     def promedio(self, numeros):
         """
