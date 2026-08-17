@@ -59,7 +59,8 @@ class Formulas:
         Ejemplo:
             mruv_velocidad(2, 1, 3) -> 5.0
         """
-        pass
+        velocidad_mruv= velocidad_inicial + aceleracion*tiempo
+        return velocidad_mruv
 
     def fuerza_newton(self, masa, aceleracion):
         """
@@ -77,7 +78,8 @@ class Formulas:
         Ejemplo:
             fuerza_newton(10, 2) -> 20.0
         """
-        pass
+        forza_newton= masa * aceleracion
+        return forza_newton
 
     def energia_cinetica(self, masa, velocidad):
         """
@@ -95,7 +97,8 @@ class Formulas:
         Ejemplo:
             energia_cinetica(2, 3) -> 9.0
         """
-        pass
+        ener_cinetica= (1/2)* masa * velocidad**2 
+        return ener_cinetica
 
     def energia_potencial(self, masa, altura, gravedad=9.8):
         """
