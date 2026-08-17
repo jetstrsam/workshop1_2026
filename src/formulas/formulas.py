@@ -136,7 +136,8 @@ class Formulas:
         Ejemplo:
             ley_ohm_voltaje(2, 5) -> 10.0
         """
-        pass
+        voltaje= corriente * resistencia
+        return ohm_voltaje
 
     def ley_ohm_corriente(self, voltaje, resistencia):
         """
@@ -154,7 +155,8 @@ class Formulas:
         Ejemplo:
             ley_ohm_corriente(10, 5) -> 2.0
         """
-        pass
+        corriente= voltaje / resistencia
+        return ohm_corriente
 
     def interes_simple(self, capital, tasa, tiempo):
         """
@@ -173,7 +175,8 @@ class Formulas:
         Ejemplo:
             interes_simple(1000, 0.05, 2) -> 100.0
         """
-        pass
+        interes_ganado= capital * tasa * tiempo
+        return interes_ganado
 
     def interes_compuesto(self, capital, tasa, tiempo, n=1):
         """
