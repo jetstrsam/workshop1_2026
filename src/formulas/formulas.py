@@ -1,3 +1,5 @@
+import math
+
 class Formulas:
     """
     Clase con ejercicios de fórmulas de física, finanzas y álgebra.
@@ -237,7 +239,15 @@ class Formulas:
         Ejemplo:
             raices_cuadraticas(1, -3, 2) -> (2.0, 1.0)
         """
-        pass
+        
+        discriminante = b**2 - 4*a*c 
+        if discriminante < 0:
+            raise ValueError("Discriminante negativo.")
+
+        raiz1=(-b + math.sqrt(discriminante)) / (2*a)
+        raiz2=(-b - math.sqrt(discriminante)) / (2*a)
+
+        return(raiz1, raiz2)
 
     def imc(self, peso, altura):
         """
