@@ -145,7 +145,19 @@ class Conversion:
             romano_a_decimal("IX") -> 9
             romano_a_decimal("MCMXCIV") -> 1994
         """
-        pass
+        valores = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+         'C': 100, 'D': 500, 'M': 1000}
+
+        total = 0
+        numero = len(romano)
+
+        for i in range(numero):
+            valor_actual = valores[romano[i]]
+            if i + 1 < numero and valor_actual < valores[romano[i + 1]]:
+                total -= valor_actual
+            else:
+                total += valor_actual
+        return total
     
     def texto_a_morse(self, texto):
         """
@@ -161,8 +173,20 @@ class Conversion:
             texto_a_morse("SOS") -> "... --- ..."
             texto_a_morse("HELLO") -> ".... . .-.. .-.. ---"
         """
-        pass
-    
+        diccionario_morse = {
+        'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
+        'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
+        'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
+        'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+        'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
+        'Z': '--..',
+        '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+        '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
+         }
+
+        resultado = [diccionario_morse[char] for char in texto.upper() if char in diccionario_morse]
+        return " ".join(resultado)
+
     def morse_a_texto(self, morse):
         """
         Convierte código Morse a texto.
@@ -177,4 +201,15 @@ class Conversion:
             morse_a_texto("... --- ...") -> "SOS"
             morse_a_texto(".... . .-.. .-.. ---") -> "HELLO"
         """
-        pass
+        morse_a_texto = {
+        '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E',
+        '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J',
+        '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O',
+        '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
+        '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y',
+        '--..': 'Z',
+        '-----': '0', '.----': '1', '..---': '2', '...--': '3', '....-': '4',
+        '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9'
+        }
+        simbolos = morse.split()
+        return "".join(morse_a_texto[simbolo] for simbolo in simbolos if simbolo in morse_a_texto)
