@@ -268,7 +268,8 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
-        pass
+        area_superficie_cilindro= 2 * math.pi * radio * (radio + altura)
+        return area_superficie_cilindro
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
