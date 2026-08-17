@@ -33,7 +33,7 @@ class Stats:
             mediana([1, 2, 3, 4, 5]) -> 3.0
             mediana([1, 2, 3, 4]) -> 2.5
         """
-        if not numero:
+        if not numeros:
             return 0.0
 
         ordenados =  sorted(numeros)
