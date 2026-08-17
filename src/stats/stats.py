@@ -31,7 +31,17 @@ class Stats:
             mediana([1, 2, 3, 4, 5]) -> 3.0
             mediana([1, 2, 3, 4]) -> 2.5
         """
-        pass
+        if not numero:
+            return 0.0
+
+        ordenados =  sorted(numeros)
+        n = len(ordenados)
+        mitad = n // 2
+
+        if n % 2 == 0:
+            return (ordenados[mitad - 1] + ordenados[mitad]) / 2.0
+        else:
+            return float(ordenados[mitad])
     
     def moda(self, numeros):
         """
