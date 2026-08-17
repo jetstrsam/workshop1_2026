@@ -196,7 +196,8 @@ class Formulas:
         Ejemplo:
             interes_compuesto(1000, 0.05, 2) -> 1102.5
         """
-        pass
+        interes_compuesto= capital * (1 + tasa/n)**(n*tiempo)
+        return interes_compuesto
 
     def discriminante(self, a, b, c):
         """
