@@ -214,7 +214,8 @@ class Geometria:
         Returns:
             float: Área de la superficie del cubo
         """
-        pass
+        area_superficie_cubo= 6 * (lado ** 2)
+        return area_superficie_cubo
     
     def volumen_esfera(self, radio):
         """
