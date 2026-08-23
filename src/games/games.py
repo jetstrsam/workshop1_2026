@@ -21,6 +21,9 @@ class Games:
         if j1 == j2:
             return str("empate")
 
+        if j1 not in ["piedra", "papel", "tijera"] or j2 not in ["piedra", "papel", "tijera"]:
+            return str("invalid")
+
         if (
             (j1 == "piedra" and j2 == "tijera")
             or (j1 == "papel" and j2 == "piedra")
@@ -29,7 +32,7 @@ class Games:
             return str("jugador1")
 
         else:
-        #por descarte, gana el jugador2 si no se cumplen las condiciones
+        #por descarte, gana el jugador 2 si no se cumplen las condiciones
             return("jugador2")
         
     
