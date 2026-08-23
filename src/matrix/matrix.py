@@ -21,7 +21,29 @@ class Matrix:
         Ejemplo:
             suma_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[6, 8], [10, 12]]
         """
-        pass
+        def suma_matrices(self, A, B):
+    """
+    Suma dos matrices elemento a elemento.
+    """
+    if len(A) != len(B):
+        raise ValueError("Las matrices tienen dimensiones incompatibles")
+
+    if not A and not B:
+        return []
+
+    filas = len(A)
+    cols = len(A[0])
+
+    for i in range(filas):
+        if len(A[i]) != cols or len(B[i]) != cols:
+            raise ValueError("Las matrices tienen dimensiones incompatibles")
+
+    resultado = []
+    for i in range(filas):
+        fila_suma = [A[i][j] + B[i][j] for j in range(cols)]
+        resultado.append(fila_suma)
+
+    return resultado
 
     def resta_matrices(self, A, B):
         """
