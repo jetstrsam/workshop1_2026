@@ -185,7 +185,7 @@ class Matrix:
         cantidad_filas= len(matriz)
 
         for fila  in matriz:
-            if len(fila != cantidad=filas):
+            if len(fila != cantidad==filas):
                 return False
 
         return True
